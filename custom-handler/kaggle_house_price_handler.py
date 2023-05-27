@@ -101,7 +101,7 @@ class HousePriceHandler(BaseHandler):
         inference_output_json = json.dumps(inference_output_list)
         print(inference_output_json)
         postprocess_output = inference_output_json
-
+        # test
         return postprocess_output
 
     def handle(self, data, context):
