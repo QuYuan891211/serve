@@ -88,6 +88,7 @@ class HousePriceHandler(BaseHandler):
         return model_output
 
     def postprocess(self, inference_output):
+        responses = []
         """
         Return inference result.
         :param inference_output: list of inference output
@@ -96,13 +97,13 @@ class HousePriceHandler(BaseHandler):
         # Take output from network and post-process to desired format
         inference_output = inference_output.detach().numpy()
         # conv to json
-        # Create dict
         inference_output_list = {'pred_result': inference_output.tolist()}
         inference_output_json = json.dumps(inference_output_list)
         print(inference_output_json)
         postprocess_output = inference_output_json
+        responses.append(postprocess_output)
         # test
-        return postprocess_output
+        return responses
 
     def handle(self, data, context):
         """
