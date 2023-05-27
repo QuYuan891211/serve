@@ -99,7 +99,7 @@ class HousePriceHandler(BaseHandler):
         # Create dict
         inference_output_list = {'pred_result': inference_output.tolist()}
         inference_output_json = json.dumps(inference_output_list)
-
+        print(inference_output_json)
         postprocess_output = inference_output_json
 
         return postprocess_output
