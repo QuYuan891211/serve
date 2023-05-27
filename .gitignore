@@ -41,3 +41,5 @@ instances.yaml.backup
 ## Models
 *.pt
 *.onnx
+/model-store/
+/model-pth-store/
